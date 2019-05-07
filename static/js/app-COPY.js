@@ -1,29 +1,48 @@
 function buildMetadata(sample) {
 
-  // @TODO: Complete the following function that builds the metadata panel
+    // create table object to select the table body
+    var metadataTable = d3.select("#sample-metadata");
 
-  // Use `d3.json` to fetch the metadata for a sample
-    // Use d3 to select the panel with id of `#sample-metadata`
+    // Clear previous table data
+    d3.selectAll("tr").remove();
 
-    // Use `.html("") to clear any existing metadata
-
-    // Use `Object.entries` to add each key and value pair to the panel
-    // Hint: Inside the loop, you will need to use d3 to append new
-    // tags for each key-value in the metadata.
+    // Append sample to metadata route, create function to get data & append to table
+    d3.json("/metadata/" + sample).then((getData) => {
+      Object.entries(getData).forEach(function([key, value]) {
+          metadataTable
+            .append("table")
+            .append("tbody")
+            .append("tr")
+            .property("td", [key, value])
+            .text([key + ": " + value]);    
+          });
+        });
+}
 
     // BONUS: Build the Gauge Chart
     // buildGauge(data.WFREQ);
-}
 
 function buildCharts(sample) {
 
   // @TODO: Use `d3.json` to fetch the sample data for the plots
 
     // @TODO: Build a Bubble Chart using the sample data
+      // Create a Bubble Chart that uses data from your samples route (/samples/<sample>) 
+      //to display each sample.
+
+        // Use otu_ids for the x values
+        // Use sample_values for the y values
+        // Use sample_values for the marker size
+        // Use otu_ids for the marker colors
+        // Use otu_labels for the text values
 
     // @TODO: Build a Pie Chart
     // HINT: You will need to use slice() to grab the top 10 sample_values,
     // otu_ids, and labels (10 each).
+
+        // Use sample_values as the values for the PIE chart
+        // Use otu_ids as the labels for the pie chart
+        // Use otu_labels as the hovertext for the chart
 }
 
 function init() {
