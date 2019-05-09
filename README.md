@@ -3,6 +3,7 @@ Interactive visualizations using JavaScript/D3, Flask, HTML, and Heroku
 
 ## Step 1 - Plotly.js ##
 
+Using [app.js](https://github.com/hollybergen/Belly-Button-Biodiversity-Interactive-Visualizations/blob/master/static/js/app.js) file:
 * Used Plotly.js to build interactive charts for the dashboard.
 * Displays the sample metadata from the route /metadata/<sample>
 * Created a PIE chart that uses data from samples route (/samples/<sample>) to display the top 10 samples.
@@ -11,5 +12,5 @@ Interactive visualizations using JavaScript/D3, Flask, HTML, and Heroku
 
 ## Step 2 - Heroku ##
 
-Deployed your Flask app to Heroku.
+Deployed your Flask app to Heroku. <br>
 [Published Site](https://belly-button-div-app.herokuapp.com/)
