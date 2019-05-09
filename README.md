@@ -12,5 +12,5 @@ Using [app.py](https://github.com/hollybergen/Belly-Button-Biodiversity-Interact
 
 ## Step 2 - Heroku ##
 
-Deployed your Flask app to Heroku. <br>
+Deployed Flask app to Heroku. <br>
 [Published Site](https://belly-button-div-app.herokuapp.com/)
